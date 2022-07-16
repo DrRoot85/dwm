@@ -17,16 +17,23 @@ options:
 .c.o:
 	${CC} -c ${CFLAGS} $<
 
-${OBJ}: config.h config.mk
+${OBJ}: config.h theme_beg.h config.mk
 
-config.h:
-	cp config.def.h $@
+theme.h:
+	./xtheme
+
+theme_beg.h:
+	./themesetup
+
+config.h: theme.h
+	cp -n config.def.h $@
 
 dwm: ${OBJ}
 	${CC} -o $@ ${OBJ} ${LDFLAGS}
+	rm -f theme_{beg,end}.h
 
 clean:
-	rm -f dwm ${OBJ} dwm-${VERSION}.tar.gz
+	rm -f dwm ${OBJ} theme_{beg,end}.h dwm-${VERSION}.tar.gz
 
 dist: clean
 	mkdir -p dwm-${VERSION}
