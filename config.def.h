@@ -4,6 +4,11 @@
 /* theme management */
 # include "theme_beg.h" /* this is a compile-time generated header file */
 # include "theme.h"
+/* */
+#define XF86KbdBrightnessDown  	0x1008ff06
+#define XF86KbdBrightnessUp    	0x1008ff05
+#define XF86LaunchA		0x1008ff4a
+#define XF86LaunchB		0x1008ff4b
 
 /* appearance */
 static const unsigned int gappih    = 20;       /* horiz inner gap between windows */
@@ -98,9 +103,15 @@ static const char *dmenucmd[] = { "dmenu_run", "-l", "15" , "-m", dmenumon,  NUL
 static const char *termcmd[]  = { "st", NULL };
 static const char *termcmd2[]  = { "alacritty", NULL };
 static const char *clipmenu[]  = { "clipmenu", NULL };
+/* */
+static const char *mutecmd[] = { "pamixer", "--toggle-mute", NULL };
+static const char *voldowncmd[] = { "pamixer", "-d", "5", "--unmute", NULL };
+static const char *volupcmd[] = { "pamixer", "--allow-boost", "-i", "5",  "--unmute", NULL };
+static const char *screenshotcmd[]  = { "scrot", "/home/mahmoudhb/Pictures/screenshots/%Y-%T-%d-%s_screenshot.jpg", NULL };
 
 /* theme management */
 # include "theme_end.h" /* this is a compile-time generated header file */
+#include <X11/XF86keysym.h>
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -162,6 +173,26 @@ static Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ControlMask, 			XK_q,      quit,           {1} }, 
+
+	/* */
+	{ 0, XF86XK_MonBrightnessUp,	spawn,		{.v = (const char*[]){ "xbacklight", "-inc", "5", NULL } } },
+	{ 0, XF86XK_MonBrightnessDown,	spawn,		{.v = (const char*[]){ "xbacklight", "-dec", "5", NULL } } },
+
+	{ 0, XF86XK_AudioMute,		spawn,		{.v = mutecmd }},
+	{ 0, XF86XK_AudioRaiseVolume,	spawn,		{.v = volupcmd } },
+	{ 0, XF86XK_AudioLowerVolume,	spawn,		{.v = voldowncmd } },
+
+	{ 0, XF86XK_AudioPrev,		spawn,		{.v = (const char*[]){ "playerctl", "prev", NULL } } },
+	{ 0, XF86XK_AudioNext,		spawn,		{.v = (const char*[]){ "playerctl",  "next", NULL } } },
+	{ 0, XF86XK_AudioPlay,		spawn,		{.v = (const char*[]){ "playerctl", "play-pause", NULL } } },
+
+	
+	{ 0, XF86LaunchB,		spawn,		{.v = screenshotcmd } },
+	{ 0, XF86LaunchA,		spawn,		{.v = (const char*[]){ "firefox", NULL } } },
+
+
+	{ 0, XF86KbdBrightnessUp,		spawn,		{.v = (const char*[]) {"brightnessctl", "--device='smc::kbd_backlight'" , "set", "+5""} } },
+	{ 0, XF86KbdBrightnessDown,		spawn,		{.v = (const char*[]) {"brightnessctl", "--device='smc::kbd_backlight'" , "set", "5-""} } },
 };
 
 /* button definitions */
