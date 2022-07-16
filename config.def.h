@@ -191,8 +191,8 @@ static Key keys[] = {
 	{ 0, XF86LaunchA,		spawn,		{.v = (const char*[]){ "firefox", NULL } } },
 
 
-	{ 0, XF86KbdBrightnessUp,		spawn,		{.v = (const char*[]) {"brightnessctl", "--device='smc::kbd_backlight'" , "set", "+5"} } },
-	{ 0, XF86KbdBrightnessDown,		spawn,		{.v = (const char*[]) {"brightnessctl", "--device='smc::kbd_backlight'" , "set", "5-"} } },
+	{ 0, XF86KbdBrightnessUp,		spawn,		{.v = (const char*[]) {"xbacklight", "-ctrl", "smc::kbd_backlight" , "-inc", "5", NULL} } },
+	{ 0, XF86KbdBrightnessDown,		spawn,		{.v = (const char*[]) {"xbacklight", "-ctrl", "smc::kbd_backlight" , "-dec", "5", NULL} } },
 };
 
 /* button definitions */
