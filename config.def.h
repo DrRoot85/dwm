@@ -115,10 +115,12 @@ static const char *screenshotcmd[]  = { "scrot", "/home/mahmoudhb/Pictures/scree
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
+  { MODKEY|ControlMask, 					XK_space,  spawn, 				 SHCMD("setxkbmap -model apple_laptop -layout us -variant mac") },
+  { MODKEY|ControlMask,						XK_Alt_L,  spawn, 				 SHCMD("setxkbmap  -model apple_laptop -layout ara -variant mac") },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY, 						XK_Return, spawn,          {.v = termcmd2 } },
-	{ MODKEY, 						XK_c,	   spawn,          {.v = clipmenu } },
+	{ MODKEY, 											XK_Return, spawn,          {.v = termcmd2 } },
+	{ MODKEY, 											XK_c,	   spawn,          {.v = clipmenu } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -172,27 +174,27 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ MODKEY|ControlMask, 			XK_q,      quit,           {1} }, 
+	{ MODKEY|ControlMask, 					XK_q,      quit,           {1} }, 
 
 	/* */
-	{ 0, XF86XK_MonBrightnessUp,	spawn,		{.v = (const char*[]){ "xbacklight", "-inc", "5", NULL } } },
+	{ 0, XF86XK_MonBrightnessUp,		spawn,		{.v = (const char*[]){ "xbacklight", "-inc", "5", NULL } } },
 	{ 0, XF86XK_MonBrightnessDown,	spawn,		{.v = (const char*[]){ "xbacklight", "-dec", "5", NULL } } },
 
-	{ 0, XF86XK_AudioMute,		spawn,		{.v = mutecmd }},
-	{ 0, XF86XK_AudioRaiseVolume,	spawn,		{.v = volupcmd } },
-	{ 0, XF86XK_AudioLowerVolume,	spawn,		{.v = voldowncmd } },
+	{ 0, XF86XK_AudioMute,					spawn,		{.v = mutecmd }},
+	{ 0, XF86XK_AudioRaiseVolume,		spawn,		{.v = volupcmd } },
+	{ 0, XF86XK_AudioLowerVolume,		spawn,		{.v = voldowncmd } },
 
-	{ 0, XF86XK_AudioPrev,		spawn,		{.v = (const char*[]){ "playerctl", "prev", NULL } } },
-	{ 0, XF86XK_AudioNext,		spawn,		{.v = (const char*[]){ "playerctl",  "next", NULL } } },
-	{ 0, XF86XK_AudioPlay,		spawn,		{.v = (const char*[]){ "playerctl", "play-pause", NULL } } },
+	{ 0, XF86XK_AudioPrev,					spawn,		{.v = (const char*[]){ "playerctl", "prev", NULL } } },
+	{ 0, XF86XK_AudioNext,					spawn,		{.v = (const char*[]){ "playerctl",  "next", NULL } } },
+	{ 0, XF86XK_AudioPlay,					spawn,		{.v = (const char*[]){ "playerctl", "play-pause", NULL } } },
 
 	
-	{ 0, XF86LaunchB,		spawn,		{.v = screenshotcmd } },
-	{ 0, XF86LaunchA,		spawn,		{.v = (const char*[]){ "firefox", NULL } } },
+	{ 0, XF86LaunchB,								spawn,		{.v = screenshotcmd } },
+	{ 0, XF86LaunchA,								spawn,		{.v = (const char*[]){ "firefox", NULL } } },
 
 
-	{ 0, XF86KbdBrightnessUp,		spawn,		{.v = (const char*[]) {"xbacklight", "-ctrl", "smc::kbd_backlight" , "-inc", "5", NULL} } },
-	{ 0, XF86KbdBrightnessDown,		spawn,		{.v = (const char*[]) {"xbacklight", "-ctrl", "smc::kbd_backlight" , "-dec", "5", NULL} } },
+	{ 0, XF86KbdBrightnessUp,				spawn,		{.v = (const char*[]) {"xbacklight", "-ctrl", "smc::kbd_backlight" , "-inc", "5", NULL} } },
+	{ 0, XF86KbdBrightnessDown,			spawn,		{.v = (const char*[]) {"xbacklight", "-ctrl", "smc::kbd_backlight" , "-dec", "5", NULL} } },
 };
 
 /* button definitions */
