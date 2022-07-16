@@ -8,4 +8,5 @@
 # define DWM_BORDER "#93a1a1"
 # define DWM_SELFOREGROUND "#073642"
 # define DWM_SELBACKGROUND "#2aa198"
-# define DWM_SELBORDER "#cb4b16"
+/*# define DWM_SELBORDER "#cb4b16"*/
+# define DWM_SELBORDER "#002b36"
