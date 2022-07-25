@@ -1,0 +1,9 @@
+enable ssh connection :
+1- ssh -f -N -M -S /tmp/sshtunnel -D 1080 USER@server.domain.com -p22
+
+2- SOCKS Proxy Server, enter 127.0.0.1:1080
+
+
+Disable ssh connection :
+ssh -S /tmp/sshtunnel -O exit server.domain.com -p22
+
