@@ -16,7 +16,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
-static const int showsystray             = 1;   /* 0 means no systray */
+static const int showsystray             = 0;   /* 0 means no systray */
 static const char *fonts[]          = { "Hack:size=10:antialias=true:autohint=true", "terminus:style=Bold:size=14" ,"monospace:size=10" };
 static const char dmenufont[]       = { "Hack:size=10:antialias=true:autohint=true", "terminus:style=Bold:size=14" ,"monospace:size=10" };
 //static const char col_gray1[]       = "#222222";
