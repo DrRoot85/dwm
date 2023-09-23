@@ -18,7 +18,7 @@ static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray             = 0;   /* 0 means no systray */
 static const char *fonts[]          = { "Hack:size=10:antialias=true:autohint=true", "NotoColorEmoji:pixelsize=10:antialias=true:autohint=true" , "terminus:style=Bold:size=14" ,"monospace:size=10" };
-static const char dmenufont[]       = { "Hack:size=10:antialias=true:autohint=true", "NotoColorEmoji:pixelsize=10:antialias=true:autohint=true", "terminus:style=Bold:size=14" ,"monospace:size=10" };
+//static const char dmenufont[]       = { "Hack:size=10:antialias=true:autohint=true", "NotoColorEmoji:pixelsize=10:antialias=true:autohint=true", "terminus:style=Bold:size=14" ,"monospace:size=10" };
 //static const char col_gray1[]       = "#222222";
 //static const char col_gray2[]       = "#444444";
 //static const char col_gray3[]       = "#bbbbbb";
@@ -73,14 +73,14 @@ static const Rule rules[] = {
 	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
 	{ "St",      NULL,     NULL,           0,         0,          1,           0,        -1 },
-    	{"Alacritty",NULL,     NULL, 	       0,         0,          1,           1,        -1},
-        {"qutebrowser",NULL,   NULL, 	       1 << 3, 	  False,      0,         -1,       -1},
+  {"Alacritty",NULL,     NULL, 	       0,         0,          1,           1,        -1},
+  {"qutebrowser",NULL,   NULL, 	       1 << 3, 	  False,      0,         -1,       -1},
 	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
-        { NULL,	     "spterm", NULL,	       SPTAG(0),  1,	      0,         0,        -1 },
-        { NULL,	     "spfm",   NULL,	       SPTAG(1),  1,	      0,         0,        -1 },
-        { NULL,	     "spncm",  NULL,	       SPTAG(2),  1,	      0,         0,        -1 },
-        { NULL,	     "spclock",NULL,	       SPTAG(3),  1,	      0,         0,        -1 },
-        { NULL,	     "spcava", NULL,	       SPTAG(4),  1,	      0,         0,        -1 },
+  { NULL,	     "spterm", NULL,	       SPTAG(0),  1,	      0,         0,        -1 },
+  { NULL,	     "spfm",   NULL,	       SPTAG(1),  1,	      0,         0,        -1 },
+  { NULL,	     "spncm",  NULL,	       SPTAG(2),  1,	      0,         0,        -1 },
+  { NULL,	     "spclock",NULL,	       SPTAG(3),  1,	      0,         0,        -1 },
+  { NULL,	     "spcava", NULL,	       SPTAG(4),  1,	      0,         0,        -1 },
 	{ NULL,	     "spkee",  NULL,           SPTAG(6),  1,          0,         0,        -1 },
 };
 
@@ -126,11 +126,12 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 //static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,  NULL }; /* "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, */
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon,  NULL }; /* "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, */
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *clipcmd[]  = { "clipmenu", NULL };
-static const char *downbri[]  = {"backlight", "decr", "5", NULL};
-static const char *upbri[]    = {"backlight", "incr", "5", NULL};
+static const char *downbri[]  = {"xbacklight", "-dec", "5", NULL};
+static const char *upbri[]    = {"xbacklight", "-inc", "5", NULL};
+static const char *autowall[] = {"autowall", NULL}
 
 #include "selfrestart.c"
 #include <X11/XF86keysym.h> /* makes XF86* keys work */
@@ -140,6 +141,7 @@ static const Key keys[] = {
 	/*brightness control keys */
 	{ 0, XF86XK_MonBrightnessDown, spawn, {.v = downbri}},
 	{ 0, XF86XK_MonBrightnessUp, spawn, {.v = upbri}},
+  { 0, XF86XK_Tools,            spawn, {.v = autowall}},
 	/*                    */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
