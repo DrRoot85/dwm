@@ -13,11 +13,12 @@ static const unsigned int gappov    = 30;       /* vert outer gap between window
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+static const Bool viewontag         = True;     /* Switch view on tag switch */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray             = 0;   /* 0 means no systray */
-static const char *fonts[]          = { "Hack:size=10:antialias=true:autohint=true", "NotoColorEmoji:pixelsize=10:antialias=true:autohint=true" , "terminus:style=Bold:size=14" ,"monospace:size=10" };
+static const char *fonts[]          = { "Hack:size=10:antialias=true:autohint=true", "NotoColorEmoji:pixelsize=10:antialias=true:autohint=true" , "terminus:style=Bold:size=10" ,"monospace:size=10" };
 //static const char dmenufont[]       = { "Hack:size=10:antialias=true:autohint=true", "NotoColorEmoji:pixelsize=10:antialias=true:autohint=true", "terminus:style=Bold:size=14" ,"monospace:size=10" };
 //static const char col_gray1[]       = "#222222";
 //static const char col_gray2[]       = "#444444";
@@ -126,13 +127,16 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 //static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon,  NULL }; /* "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, */
-static const char *termcmd[]  = { "alacritty", NULL };
-static const char *clipcmd[]  = { "clipmenu", NULL };
-static const char *downbri[]  = {"xbacklight", "-dec", "5", NULL};
-static const char *upbri[]    = {"xbacklight", "-inc", "5", NULL};
-static const char *autowall[] = {"autowall", NULL};
-static const char *mute[]     = {"pactl", "set-source-mute", "@DEFAULT_SOURCE@", "toggle", NULL};
+static const char *dmenucmd[]	 = { "dmenu_run", "-m", dmenumon,  NULL }; /* "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, */
+static const char *termcmd[] 	 = { "alacritty", NULL };
+static const char *clipcmd[] 	 = { "clipmenu", NULL };
+static const char *downbri[] 	 = {"xbacklight", "-dec", "5", NULL};
+static const char *upbri[]   	 = {"xbacklight", "-inc", "5", NULL};
+static const char *autowall[]	 = {"$HOME/.local/bin/autowall", NULL};
+static const char *micmute[] 	 = {"pactl", "set-source-mute", "@DEFAULT_SOURCE@", "toggle", NULL};
+static const char *mute[]    	 = {"pamixer ", "-t ",  NULL};
+static const char *raisevolume[] = {"pamixer", "-i", "5", "--allow-boost", NULL};
+static const char *lowvolume[] 	 = {"pamixer", "-d", "5", NULL};
 
 #include "selfrestart.c"
 #include <X11/XF86keysym.h> /* makes XF86* keys work */
@@ -140,10 +144,16 @@ static const char *mute[]     = {"pactl", "set-source-mute", "@DEFAULT_SOURCE@",
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	/*brightness control keys */
-	{ 0, XF86XK_MonBrightnessDown, spawn, {.v = downbri}},
-	{ 0, XF86XK_MonBrightnessUp,   spawn, {.v = upbri}},
-  { 0, XF86XK_Tools,             spawn, {.v = autowall}},
-  { 0, XF86XK_AudioMicMute,	     spawn,	{.v = mute}},
+	{ 0, XF86XK_MonBrightnessDown, 	spawn, {.v = downbri}},
+	{ 0, XF86XK_MonBrightnessUp,   	spawn, {.v = upbri}},
+  	/*   */
+	{ 0, XF86XK_Tools,          	spawn, {.v = autowall}},
+  	/*  */
+	{ 0, XF86XK_AudioMicMute,     	spawn,	{.v = micmute}},
+	{ 0,  XF86XK_AudioMute,	      	spawn,	{.v = mute}},
+	{ 0,  XF86XK_AudioLowerVolume,  spawn,	{.v = lowvolume}},
+	{ 0,  XF86XK_AudioRaiseVolume,	spawn,	{.v = raisevolume}},
+
 /*  { 0, XF86XK_Explorer,          spawn, {.v = }},
   { 0, XF86XK_LaunchA,           spawn, {.v = }},
   { 0, XF86XK_Search,            spawn, {.v = }},
@@ -151,7 +161,7 @@ static const Key keys[] = {
 	/*                    */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY, 			                XK_c, 	   spawn, 	       {.v = clipcmd}},
+	{ MODKEY, 		        XK_c, 	   spawn, 	       {.v = clipcmd}},
 	/*               */
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
