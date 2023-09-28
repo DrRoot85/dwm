@@ -1,6 +1,8 @@
 #!/bin/sh
 
-wal -i "$HOME/Pictures/WallPapers/"
+wal -i "$HOME/Pictures/WallPapers/" -n
 notify-send "Wait for suckless"
-sleep 1
-suckclean && notify-send "All Done Restart Dwm Now"
+sleep 5
+feh --bg-tile "$(< "${HOME}/.cache/wal/wal")"
+sleep 2
+suckclean && sleep 5 &&  notify-send "All Done Restart Dwm Now"
