@@ -1,0 +1,48 @@
+[W][00533.106186] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00533.106238] mod.rt       | [     module-rt.c:  982 do_rtkit_setup()] RTKit does not give us MaxRealtimePriority, using 1
+[W][00533.106808] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00533.106827] mod.rt       | [     module-rt.c:  987 do_rtkit_setup()] RTKit does not give us MinNiceLevel, using 0
+[W][00533.107272] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00533.107294] mod.rt       | [     module-rt.c:  992 do_rtkit_setup()] RTKit does not give us RTTimeUSecMax, using -1
+[W][00012.087494] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00012.087976] mod.rt       | [     module-rt.c:  982 do_rtkit_setup()] RTKit does not give us MaxRealtimePriority, using 1
+[W][00012.088789] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00012.088816] mod.rt       | [     module-rt.c:  987 do_rtkit_setup()] RTKit does not give us MinNiceLevel, using 0
+[W][00012.089342] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00012.089364] mod.rt       | [     module-rt.c:  992 do_rtkit_setup()] RTKit does not give us RTTimeUSecMax, using -1
+[W][00020.142811] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00020.143191] mod.rt       | [     module-rt.c:  982 do_rtkit_setup()] RTKit does not give us MaxRealtimePriority, using 1
+[W][00020.143500] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00020.143508] mod.rt       | [     module-rt.c:  987 do_rtkit_setup()] RTKit does not give us MinNiceLevel, using 0
+[W][00020.143749] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00020.143759] mod.rt       | [     module-rt.c:  992 do_rtkit_setup()] RTKit does not give us RTTimeUSecMax, using -1
+[W][00025.773717] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00025.773940] mod.rt       | [     module-rt.c:  982 do_rtkit_setup()] RTKit does not give us MaxRealtimePriority, using 1
+[W][00025.774445] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00025.774474] mod.rt       | [     module-rt.c:  987 do_rtkit_setup()] RTKit does not give us MinNiceLevel, using 0
+[W][00025.774868] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00025.774892] mod.rt       | [     module-rt.c:  992 do_rtkit_setup()] RTKit does not give us RTTimeUSecMax, using -1
+[W][00009.918473] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00009.918929] mod.rt       | [     module-rt.c:  982 do_rtkit_setup()] RTKit does not give us MaxRealtimePriority, using 1
+[W][00009.919349] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00009.919360] mod.rt       | [     module-rt.c:  987 do_rtkit_setup()] RTKit does not give us MinNiceLevel, using 0
+[W][00009.919672] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00009.919684] mod.rt       | [     module-rt.c:  992 do_rtkit_setup()] RTKit does not give us RTTimeUSecMax, using -1
+[W][00010.356879] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00010.357872] mod.rt       | [     module-rt.c:  982 do_rtkit_setup()] RTKit does not give us MaxRealtimePriority, using 1
+[W][00010.358070] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00010.358084] mod.rt       | [     module-rt.c:  987 do_rtkit_setup()] RTKit does not give us MinNiceLevel, using 0
+[W][00010.358282] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00010.358290] mod.rt       | [     module-rt.c:  992 do_rtkit_setup()] RTKit does not give us RTTimeUSecMax, using -1
+[W][00010.014338] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00010.014571] mod.rt       | [     module-rt.c:  982 do_rtkit_setup()] RTKit does not give us MaxRealtimePriority, using 1
+[W][00010.014759] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00010.014769] mod.rt       | [     module-rt.c:  987 do_rtkit_setup()] RTKit does not give us MinNiceLevel, using 0
+[W][00010.014961] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00010.014970] mod.rt       | [     module-rt.c:  992 do_rtkit_setup()] RTKit does not give us RTTimeUSecMax, using -1
+[W][00016.137538] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00016.137865] mod.rt       | [     module-rt.c:  982 do_rtkit_setup()] RTKit does not give us MaxRealtimePriority, using 1
+[W][00016.138071] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00016.138079] mod.rt       | [     module-rt.c:  987 do_rtkit_setup()] RTKit does not give us MinNiceLevel, using 0
+[W][00016.138271] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00016.138277] mod.rt       | [     module-rt.c:  992 do_rtkit_setup()] RTKit does not give us RTTimeUSecMax, using -1

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbel version="1.0"
+      xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks"
+      xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
+>
+  <bookmark href="file:///home/DrRoot/Downloads/30-touchpad.conf" added="2023-09-27T17:28:19.157230Z" modified="2023-09-27T17:28:19.157235Z" visited="2023-09-27T17:28:19.157231Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2023-09-27T17:28:19.157233Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/DrRoot/Downloads/grub-customizer-5.2.3-1-x86_64.pkg.tar.zst" added="2023-09-27T18:36:23.238583Z" modified="2023-09-27T18:36:23.238611Z" visited="2023-09-27T18:36:23.238591Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-zstd-compressed-tar"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2023-09-27T18:36:23.238599Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/DrRoot/Downloads/tmux.conf" added="2023-09-27T22:37:30.661638Z" modified="2023-09-27T22:37:30.661643Z" visited="2023-09-27T22:37:30.661639Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2023-09-27T22:37:30.661641Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/DrRoot/Downloads/Xresources" added="2023-09-27T22:39:21.721556Z" modified="2023-09-27T22:39:21.721565Z" visited="2023-09-27T22:39:21.721557Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2023-09-27T22:39:21.721561Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/DrRoot/Downloads/init.vim" added="2023-09-27T23:41:07.899130Z" modified="2023-09-27T23:41:07.899138Z" visited="2023-09-27T23:41:07.899131Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2023-09-27T23:41:07.899134Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/DrRoot/Downloads/config" added="2023-09-27T23:44:11.849543Z" modified="2023-09-27T23:44:11.849549Z" visited="2023-09-27T23:44:11.849544Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2023-09-27T23:44:11.849546Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+</xbel>

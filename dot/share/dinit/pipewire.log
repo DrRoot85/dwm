@@ -1,0 +1,72 @@
+[W][00533.106682] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00533.106709] mod.rt       | [     module-rt.c:  982 do_rtkit_setup()] RTKit does not give us MaxRealtimePriority, using 1
+[W][00533.107100] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00533.107114] mod.rt       | [     module-rt.c:  987 do_rtkit_setup()] RTKit does not give us MinNiceLevel, using 0
+[W][00533.107481] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00533.107502] mod.rt       | [     module-rt.c:  992 do_rtkit_setup()] RTKit does not give us RTTimeUSecMax, using -1
+[0:08:55.436719221] [1665] [1;31mERROR [1;37mIPAModule [1;34mipa_module.cpp:172 [0mSymbol ipaModuleInfo not found
+[0:08:55.436733747] [1665] [1;31mERROR [1;37mIPAModule [1;34mipa_module.cpp:292 [0;32mv4l2-compat.so: [0mIPA module has no valid info
+[0:08:55.436761704] [1665] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:284 [0mlibcamera v0.1.0
+[W][00012.086827] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00012.087880] mod.rt       | [     module-rt.c:  982 do_rtkit_setup()] RTKit does not give us MaxRealtimePriority, using 1
+[W][00012.088497] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00012.088528] mod.rt       | [     module-rt.c:  987 do_rtkit_setup()] RTKit does not give us MinNiceLevel, using 0
+[W][00012.088994] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00012.089024] mod.rt       | [     module-rt.c:  992 do_rtkit_setup()] RTKit does not give us RTTimeUSecMax, using -1
+[0:00:12.891401046] [580] [1;31mERROR [1;37mIPAModule [1;34mipa_module.cpp:172 [0mSymbol ipaModuleInfo not found
+[0:00:12.891416056] [580] [1;31mERROR [1;37mIPAModule [1;34mipa_module.cpp:292 [0;32mv4l2-compat.so: [0mIPA module has no valid info
+[0:00:12.891449456] [580] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:284 [0mlibcamera v0.1.0
+[W][00020.142853] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00020.143204] mod.rt       | [     module-rt.c:  982 do_rtkit_setup()] RTKit does not give us MaxRealtimePriority, using 1
+[W][00020.143416] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00020.143425] mod.rt       | [     module-rt.c:  987 do_rtkit_setup()] RTKit does not give us MinNiceLevel, using 0
+[W][00020.143635] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00020.143643] mod.rt       | [     module-rt.c:  992 do_rtkit_setup()] RTKit does not give us RTTimeUSecMax, using -1
+[0:00:21.027082261] [581] [1;31mERROR [1;37mIPAModule [1;34mipa_module.cpp:172 [0mSymbol ipaModuleInfo not found
+[0:00:21.027096949] [581] [1;31mERROR [1;37mIPAModule [1;34mipa_module.cpp:292 [0;32mv4l2-compat.so: [0mIPA module has no valid info
+[0:00:21.027126480] [581] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:284 [0mlibcamera v0.1.0
+[W][00025.774688] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00025.774992] mod.rt       | [     module-rt.c:  982 do_rtkit_setup()] RTKit does not give us MaxRealtimePriority, using 1
+[W][00025.775659] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00025.775699] mod.rt       | [     module-rt.c:  987 do_rtkit_setup()] RTKit does not give us MinNiceLevel, using 0
+[W][00025.776254] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00025.776281] mod.rt       | [     module-rt.c:  992 do_rtkit_setup()] RTKit does not give us RTTimeUSecMax, using -1
+[0:00:26.683269652] [588] [1;31mERROR [1;37mIPAModule [1;34mipa_module.cpp:172 [0mSymbol ipaModuleInfo not found
+[0:00:26.683284703] [588] [1;31mERROR [1;37mIPAModule [1;34mipa_module.cpp:292 [0;32mv4l2-compat.so: [0mIPA module has no valid info
+[0:00:26.683315842] [588] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:284 [0mlibcamera v0.1.0
+[W][00009.918760] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00009.918937] mod.rt       | [     module-rt.c:  982 do_rtkit_setup()] RTKit does not give us MaxRealtimePriority, using 1
+[W][00009.919485] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00009.919498] mod.rt       | [     module-rt.c:  987 do_rtkit_setup()] RTKit does not give us MinNiceLevel, using 0
+[W][00009.919954] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00009.919966] mod.rt       | [     module-rt.c:  992 do_rtkit_setup()] RTKit does not give us RTTimeUSecMax, using -1
+[0:00:10.696887772] [580] [1;31mERROR [1;37mIPAModule [1;34mipa_module.cpp:172 [0mSymbol ipaModuleInfo not found
+[0:00:10.696912528] [580] [1;31mERROR [1;37mIPAModule [1;34mipa_module.cpp:292 [0;32mv4l2-compat.so: [0mIPA module has no valid info
+[0:00:10.696962593] [580] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:284 [0mlibcamera v0.1.0
+[W][00010.356540] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00010.356912] mod.rt       | [     module-rt.c:  982 do_rtkit_setup()] RTKit does not give us MaxRealtimePriority, using 1
+[W][00010.357125] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00010.357133] mod.rt       | [     module-rt.c:  987 do_rtkit_setup()] RTKit does not give us MinNiceLevel, using 0
+[W][00010.357338] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00010.357344] mod.rt       | [     module-rt.c:  992 do_rtkit_setup()] RTKit does not give us RTTimeUSecMax, using -1
+[0:00:11.138153175] [582] [1;31mERROR [1;37mIPAModule [1;34mipa_module.cpp:172 [0mSymbol ipaModuleInfo not found
+[0:00:11.138185139] [582] [1;31mERROR [1;37mIPAModule [1;34mipa_module.cpp:292 [0;32mv4l2-compat.so: [0mIPA module has no valid info
+[0:00:11.138250127] [582] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:284 [0mlibcamera v0.1.0
+[W][00010.014277] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00010.014584] mod.rt       | [     module-rt.c:  982 do_rtkit_setup()] RTKit does not give us MaxRealtimePriority, using 1
+[W][00010.014860] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00010.014867] mod.rt       | [     module-rt.c:  987 do_rtkit_setup()] RTKit does not give us MinNiceLevel, using 0
+[W][00010.015060] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00010.015067] mod.rt       | [     module-rt.c:  992 do_rtkit_setup()] RTKit does not give us RTTimeUSecMax, using -1
+[0:00:10.799284736] [581] [1;31mERROR [1;37mIPAModule [1;34mipa_module.cpp:172 [0mSymbol ipaModuleInfo not found
+[0:00:10.799313773] [581] [1;31mERROR [1;37mIPAModule [1;34mipa_module.cpp:292 [0;32mv4l2-compat.so: [0mIPA module has no valid info
+[0:00:10.799366283] [581] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:284 [0mlibcamera v0.1.0
+[W][00016.137767] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00016.137963] mod.rt       | [     module-rt.c:  982 do_rtkit_setup()] RTKit does not give us MaxRealtimePriority, using 1
+[W][00016.138186] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00016.138204] mod.rt       | [     module-rt.c:  987 do_rtkit_setup()] RTKit does not give us MinNiceLevel, using 0
+[W][00016.138376] mod.rt       | [     module-rt.c:  292 translate_error()] RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+[W][00016.138384] mod.rt       | [     module-rt.c:  992 do_rtkit_setup()] RTKit does not give us RTTimeUSecMax, using -1
+[0:00:17.003425778] [576] [1;31mERROR [1;37mIPAModule [1;34mipa_module.cpp:172 [0mSymbol ipaModuleInfo not found
+[0:00:17.003441149] [576] [1;31mERROR [1;37mIPAModule [1;34mipa_module.cpp:292 [0;32mv4l2-compat.so: [0mIPA module has no valid info
+[0:00:17.003475902] [576] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:284 [0mlibcamera v0.1.0

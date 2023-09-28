@@ -1,0 +1,6 @@
+#!/bin/sh
+
+wal -i "$HOME/Pictures/WallPapers/"
+notify-send "Wait for suckless"
+sleep 1
+suckclean && notify-send "All Done Restart Dwm Now"

@@ -1,0 +1,1 @@
+{"net":{"http_server_properties":{"servers":[{"isolation":[],"server":"https://s.ytimg.com","supports_spdy":true},{"isolation":[],"server":"https://www.stremio.net","supports_spdy":true},{"isolation":[],"server":"https://www.google-analytics.com","supports_spdy":true}],"version":5},"network_qualities":{"CAISABiAgICA+P////8B":"3G"}}}

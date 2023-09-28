@@ -1,0 +1,135 @@
+M 21:05:47.245203             mod.rt ../pipewire/src/modules/module-rt.c:292:translate_error: RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+M 21:05:47.245337             mod.rt ../pipewire/src/modules/module-rt.c:982:do_rtkit_setup: RTKit does not give us MaxRealtimePriority, using 1
+M 21:05:47.245750             mod.rt ../pipewire/src/modules/module-rt.c:292:translate_error: RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+M 21:05:47.245785             mod.rt ../pipewire/src/modules/module-rt.c:987:do_rtkit_setup: RTKit does not give us MinNiceLevel, using 0
+M 21:05:47.246212             mod.rt ../pipewire/src/modules/module-rt.c:292:translate_error: RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+M 21:05:47.246244             mod.rt ../pipewire/src/modules/module-rt.c:992:do_rtkit_setup: RTKit does not give us RTTimeUSecMax, using -1
+W 21:05:47.367874                 pw ../pipewire/spa/plugins/bluez5/upower.c:54:upower_get_percentage_properties_reply: Failed to get percentage from UPower: org.freedesktop.DBus.Error.NameHasNoOwner
+[0:08:53.400886961] [1667] [1;31mERROR [1;37mIPAModule [1;34mipa_module.cpp:172 [0mSymbol ipaModuleInfo not found
+[0:08:53.400902776] [1667] [1;31mERROR [1;37mIPAModule [1;34mipa_module.cpp:292 [0;32mv4l2-compat.so: [0mIPA module has no valid info
+[0:08:53.400940451] [1667] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:284 [0mlibcamera v0.1.0
+W 21:05:49.405168         spa.bluez5 ../pipewire/spa/plugins/bluez5/bluez5-dbus.c:5241:get_managed_objects_reply: GetManagedObjects() failed: org.freedesktop.DBus.Error.NameHasNoOwner
+M 21:05:49.465541    m-lua-scripting ../wireplumber/modules/module-lua-scripting/api/api.c:376:object_activate_done: <WpSiAudioAdapter:0x5600c5867e20> Object activation aborted: proxy destroyed
+M 21:05:49.465579 script/create-item create-item.lua:80:chunk: <WpSiAudioAdapter:0x5600c5867e20> failed to activate item: Object activation aborted: proxy destroyed
+W 21:05:49.473801 m-portal-permissio ../wireplumber/modules/module-portal-permissionstore.c:63:wp_portal_permissionstore_plugin_lookup: <WpPortalPermissionStorePlugin:0x5600c5698b90> Failed to call Lookup: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.impl.portal.PermissionStore was not provided by any .service files
+W 21:05:49.474937 m-portal-permissio ../wireplumber/modules/module-portal-permissionstore.c:63:wp_portal_permissionstore_plugin_lookup: <WpPortalPermissionStorePlugin:0x5600c5698b90> Failed to call Lookup: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.impl.portal.PermissionStore was not provided by any .service files
+W 21:06:55.504414 m-portal-permissio ../wireplumber/modules/module-portal-permissionstore.c:63:wp_portal_permissionstore_plugin_lookup: <WpPortalPermissionStorePlugin:0x5600c5698b90> Failed to call Lookup: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.impl.portal.PermissionStore was not provided by any .service files
+W 21:11:38.842567 m-portal-permissio ../wireplumber/modules/module-portal-permissionstore.c:63:wp_portal_permissionstore_plugin_lookup: <WpPortalPermissionStorePlugin:0x5600c5698b90> Failed to call Lookup: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.impl.portal.PermissionStore was not provided by any .service files
+M 21:11:38.850832    m-lua-scripting ../wireplumber/modules/module-lua-scripting/api/api.c:376:object_activate_done: <WpSiAudioAdapter:0x5600c5a62060> Object activation aborted: proxy destroyed
+M 21:11:38.850867 script/create-item create-item.lua:80:chunk: <WpSiAudioAdapter:0x5600c5a62060> failed to activate item: Object activation aborted: proxy destroyed
+M 22:25:54.500019        wireplumber ../wireplumber/src/main.c:372:signal_handler: stopped by signal: Terminated
+M 22:25:54.506396        wireplumber ../wireplumber/src/main.c:364:on_disconnected: disconnected from pipewire
+M 22:26:29.240699             mod.rt ../pipewire/src/modules/module-rt.c:292:translate_error: RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+M 22:26:29.241124             mod.rt ../pipewire/src/modules/module-rt.c:982:do_rtkit_setup: RTKit does not give us MaxRealtimePriority, using 1
+M 22:26:29.241506             mod.rt ../pipewire/src/modules/module-rt.c:292:translate_error: RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+M 22:26:29.241538             mod.rt ../pipewire/src/modules/module-rt.c:987:do_rtkit_setup: RTKit does not give us MinNiceLevel, using 0
+M 22:26:29.241902             mod.rt ../pipewire/src/modules/module-rt.c:292:translate_error: RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+M 22:26:29.241934             mod.rt ../pipewire/src/modules/module-rt.c:992:do_rtkit_setup: RTKit does not give us RTTimeUSecMax, using -1
+W 22:26:29.365487                 pw ../pipewire/spa/plugins/bluez5/upower.c:54:upower_get_percentage_properties_reply: Failed to get percentage from UPower: org.freedesktop.DBus.Error.NameHasNoOwner
+[0:00:12.385578540] [582] [1;31mERROR [1;37mIPAModule [1;34mipa_module.cpp:172 [0mSymbol ipaModuleInfo not found
+[0:00:12.385597276] [582] [1;31mERROR [1;37mIPAModule [1;34mipa_module.cpp:292 [0;32mv4l2-compat.so: [0mIPA module has no valid info
+[0:00:12.385632877] [582] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:284 [0mlibcamera v0.1.0
+W 22:26:29.870134         spa.bluez5 ../pipewire/spa/plugins/bluez5/bluez5-dbus.c:5241:get_managed_objects_reply: GetManagedObjects() failed: org.freedesktop.DBus.Error.NameHasNoOwner
+W 22:26:29.928276 m-portal-permissio ../wireplumber/modules/module-portal-permissionstore.c:63:wp_portal_permissionstore_plugin_lookup: <WpPortalPermissionStorePlugin:0x5576fa487990> Failed to call Lookup: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.impl.portal.PermissionStore was not provided by any .service files
+W 22:26:29.928915 m-portal-permissio ../wireplumber/modules/module-portal-permissionstore.c:63:wp_portal_permissionstore_plugin_lookup: <WpPortalPermissionStorePlugin:0x5576fa487990> Failed to call Lookup: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.impl.portal.PermissionStore was not provided by any .service files
+M 22:30:27.625916        wireplumber ../wireplumber/src/main.c:372:signal_handler: stopped by signal: Terminated
+M 22:30:27.630403        wireplumber ../wireplumber/src/main.c:364:on_disconnected: disconnected from pipewire
+M 22:31:08.293920             mod.rt ../pipewire/src/modules/module-rt.c:292:translate_error: RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+M 22:31:08.294905             mod.rt ../pipewire/src/modules/module-rt.c:982:do_rtkit_setup: RTKit does not give us MaxRealtimePriority, using 1
+M 22:31:08.295111             mod.rt ../pipewire/src/modules/module-rt.c:292:translate_error: RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+M 22:31:08.295126             mod.rt ../pipewire/src/modules/module-rt.c:987:do_rtkit_setup: RTKit does not give us MinNiceLevel, using 0
+M 22:31:08.295323             mod.rt ../pipewire/src/modules/module-rt.c:292:translate_error: RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+M 22:31:08.295334             mod.rt ../pipewire/src/modules/module-rt.c:992:do_rtkit_setup: RTKit does not give us RTTimeUSecMax, using -1
+W 22:31:08.392049                 pw ../pipewire/spa/plugins/bluez5/upower.c:54:upower_get_percentage_properties_reply: Failed to get percentage from UPower: org.freedesktop.DBus.Error.NameHasNoOwner
+[0:00:20.403283396] [583] [1;31mERROR [1;37mIPAModule [1;34mipa_module.cpp:172 [0mSymbol ipaModuleInfo not found
+[0:00:20.403299166] [583] [1;31mERROR [1;37mIPAModule [1;34mipa_module.cpp:292 [0;32mv4l2-compat.so: [0mIPA module has no valid info
+[0:00:20.403328241] [583] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:284 [0mlibcamera v0.1.0
+W 22:31:09.011129         spa.bluez5 ../pipewire/spa/plugins/bluez5/bluez5-dbus.c:5241:get_managed_objects_reply: GetManagedObjects() failed: org.freedesktop.DBus.Error.NameHasNoOwner
+W 22:31:09.061847 m-portal-permissio ../wireplumber/modules/module-portal-permissionstore.c:63:wp_portal_permissionstore_plugin_lookup: <WpPortalPermissionStorePlugin:0x561065d74f50> Failed to call Lookup: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.impl.portal.PermissionStore was not provided by any .service files
+W 22:31:09.062573 m-portal-permissio ../wireplumber/modules/module-portal-permissionstore.c:63:wp_portal_permissionstore_plugin_lookup: <WpPortalPermissionStorePlugin:0x561065d74f50> Failed to call Lookup: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.impl.portal.PermissionStore was not provided by any .service files
+M 22:32:55.556616    m-lua-scripting ../wireplumber/modules/module-lua-scripting/api/api.c:376:object_activate_done: <WpSiAudioAdapter:0x5610660bd6d0> Object activation aborted: proxy destroyed
+M 22:32:55.556677 script/create-item create-item.lua:80:chunk: <WpSiAudioAdapter:0x5610660bd6d0> failed to activate item: Object activation aborted: proxy destroyed
+W 22:32:55.566206 m-portal-permissio ../wireplumber/modules/module-portal-permissionstore.c:63:wp_portal_permissionstore_plugin_lookup: <WpPortalPermissionStorePlugin:0x561065d74f50> Failed to call Lookup: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.impl.portal.PermissionStore was not provided by any .service files
+M 22:33:10.661638        wireplumber ../wireplumber/src/main.c:372:signal_handler: stopped by signal: Terminated
+M 22:33:10.664558        wireplumber ../wireplumber/src/main.c:364:on_disconnected: disconnected from pipewire
+M 22:33:50.918689             mod.rt ../pipewire/src/modules/module-rt.c:292:translate_error: RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+M 22:33:50.919174             mod.rt ../pipewire/src/modules/module-rt.c:982:do_rtkit_setup: RTKit does not give us MaxRealtimePriority, using 1
+M 22:33:50.919898             mod.rt ../pipewire/src/modules/module-rt.c:292:translate_error: RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+M 22:33:50.919948             mod.rt ../pipewire/src/modules/module-rt.c:987:do_rtkit_setup: RTKit does not give us MinNiceLevel, using 0
+M 22:33:50.920728             mod.rt ../pipewire/src/modules/module-rt.c:292:translate_error: RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+M 22:33:50.920778             mod.rt ../pipewire/src/modules/module-rt.c:992:do_rtkit_setup: RTKit does not give us RTTimeUSecMax, using -1
+W 22:33:51.030658                 pw ../pipewire/spa/plugins/bluez5/upower.c:54:upower_get_percentage_properties_reply: Failed to get percentage from UPower: org.freedesktop.DBus.Error.NameHasNoOwner
+[0:00:26.047508040] [590] [1;31mERROR [1;37mIPAModule [1;34mipa_module.cpp:172 [0mSymbol ipaModuleInfo not found
+[0:00:26.047526523] [590] [1;31mERROR [1;37mIPAModule [1;34mipa_module.cpp:292 [0;32mv4l2-compat.so: [0mIPA module has no valid info
+[0:00:26.047563437] [590] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:284 [0mlibcamera v0.1.0
+W 22:33:51.661470         spa.bluez5 ../pipewire/spa/plugins/bluez5/bluez5-dbus.c:5241:get_managed_objects_reply: GetManagedObjects() failed: org.freedesktop.DBus.Error.NameHasNoOwner
+W 22:33:51.711760 m-portal-permissio ../wireplumber/modules/module-portal-permissionstore.c:63:wp_portal_permissionstore_plugin_lookup: <WpPortalPermissionStorePlugin:0x55a70f813020> Failed to call Lookup: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.impl.portal.PermissionStore was not provided by any .service files
+W 22:33:51.712448 m-portal-permissio ../wireplumber/modules/module-portal-permissionstore.c:63:wp_portal_permissionstore_plugin_lookup: <WpPortalPermissionStorePlugin:0x55a70f813020> Failed to call Lookup: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.impl.portal.PermissionStore was not provided by any .service files
+M 22:36:27.831797        wireplumber ../wireplumber/src/main.c:372:signal_handler: stopped by signal: Terminated
+M 22:36:27.837284        wireplumber ../wireplumber/src/main.c:364:on_disconnected: disconnected from pipewire
+M 22:36:52.086116             mod.rt ../pipewire/src/modules/module-rt.c:292:translate_error: RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+M 22:36:52.086486             mod.rt ../pipewire/src/modules/module-rt.c:982:do_rtkit_setup: RTKit does not give us MaxRealtimePriority, using 1
+M 22:36:52.086823             mod.rt ../pipewire/src/modules/module-rt.c:292:translate_error: RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+M 22:36:52.086842             mod.rt ../pipewire/src/modules/module-rt.c:987:do_rtkit_setup: RTKit does not give us MinNiceLevel, using 0
+M 22:36:52.087134             mod.rt ../pipewire/src/modules/module-rt.c:292:translate_error: RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+M 22:36:52.087153             mod.rt ../pipewire/src/modules/module-rt.c:992:do_rtkit_setup: RTKit does not give us RTTimeUSecMax, using -1
+W 22:36:52.218417                 pw ../pipewire/spa/plugins/bluez5/upower.c:54:upower_get_percentage_properties_reply: Failed to get percentage from UPower: org.freedesktop.DBus.Error.NameHasNoOwner
+[0:00:10.210458507] [582] [1;31mERROR [1;37mIPAModule [1;34mipa_module.cpp:172 [0mSymbol ipaModuleInfo not found
+[0:00:10.210479689] [582] [1;31mERROR [1;37mIPAModule [1;34mipa_module.cpp:292 [0;32mv4l2-compat.so: [0mIPA module has no valid info
+[0:00:10.210525255] [582] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:284 [0mlibcamera v0.1.0
+W 22:36:52.687366         spa.bluez5 ../pipewire/spa/plugins/bluez5/bluez5-dbus.c:5241:get_managed_objects_reply: GetManagedObjects() failed: org.freedesktop.DBus.Error.NameHasNoOwner
+W 22:36:52.751313 m-portal-permissio ../wireplumber/modules/module-portal-permissionstore.c:63:wp_portal_permissionstore_plugin_lookup: <WpPortalPermissionStorePlugin:0x55f705e59650> Failed to call Lookup: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.impl.portal.PermissionStore was not provided by any .service files
+W 22:36:52.751874 m-portal-permissio ../wireplumber/modules/module-portal-permissionstore.c:63:wp_portal_permissionstore_plugin_lookup: <WpPortalPermissionStorePlugin:0x55f705e59650> Failed to call Lookup: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.impl.portal.PermissionStore was not provided by any .service files
+M 22:37:53.618972        wireplumber ../wireplumber/src/main.c:372:signal_handler: stopped by signal: Terminated
+M 22:37:53.623864        wireplumber ../wireplumber/src/main.c:364:on_disconnected: disconnected from pipewire
+M 22:38:22.502458             mod.rt ../pipewire/src/modules/module-rt.c:292:translate_error: RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+M 22:38:22.503138             mod.rt ../pipewire/src/modules/module-rt.c:982:do_rtkit_setup: RTKit does not give us MaxRealtimePriority, using 1
+M 22:38:22.503359             mod.rt ../pipewire/src/modules/module-rt.c:292:translate_error: RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+M 22:38:22.503378             mod.rt ../pipewire/src/modules/module-rt.c:987:do_rtkit_setup: RTKit does not give us MinNiceLevel, using 0
+M 22:38:22.503559             mod.rt ../pipewire/src/modules/module-rt.c:292:translate_error: RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+M 22:38:22.503574             mod.rt ../pipewire/src/modules/module-rt.c:992:do_rtkit_setup: RTKit does not give us RTTimeUSecMax, using -1
+W 22:38:22.599163                 pw ../pipewire/spa/plugins/bluez5/upower.c:54:upower_get_percentage_properties_reply: Failed to get percentage from UPower: org.freedesktop.DBus.Error.NameHasNoOwner
+[0:00:10.616889278] [584] [1;31mERROR [1;37mIPAModule [1;34mipa_module.cpp:172 [0mSymbol ipaModuleInfo not found
+[0:00:10.616906336] [584] [1;31mERROR [1;37mIPAModule [1;34mipa_module.cpp:292 [0;32mv4l2-compat.so: [0mIPA module has no valid info
+[0:00:10.616936165] [584] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:284 [0mlibcamera v0.1.0
+W 22:38:23.109382         spa.bluez5 ../pipewire/spa/plugins/bluez5/bluez5-dbus.c:5241:get_managed_objects_reply: GetManagedObjects() failed: org.freedesktop.DBus.Error.NameHasNoOwner
+W 22:38:23.169614 m-portal-permissio ../wireplumber/modules/module-portal-permissionstore.c:63:wp_portal_permissionstore_plugin_lookup: <WpPortalPermissionStorePlugin:0x5614061fd030> Failed to call Lookup: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.impl.portal.PermissionStore was not provided by any .service files
+W 22:38:23.170257 m-portal-permissio ../wireplumber/modules/module-portal-permissionstore.c:63:wp_portal_permissionstore_plugin_lookup: <WpPortalPermissionStorePlugin:0x5614061fd030> Failed to call Lookup: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.impl.portal.PermissionStore was not provided by any .service files
+W 22:39:02.084918                 pw ../pipewire/spa/plugins/bluez5/upower.c:54:upower_get_percentage_properties_reply: Failed to get percentage from UPower: org.freedesktop.DBus.Error.NameHasNoOwner
+W 22:39:02.089345         spa.bluez5 ../pipewire/spa/plugins/bluez5/bluez5-dbus.c:5241:get_managed_objects_reply: GetManagedObjects() failed: org.freedesktop.DBus.Error.NameHasNoOwner
+W 22:39:02.106921 m-portal-permissio ../wireplumber/modules/module-portal-permissionstore.c:63:wp_portal_permissionstore_plugin_lookup: <WpPortalPermissionStorePlugin:0x5614061fd030> Failed to call Lookup: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.impl.portal.PermissionStore was not provided by any .service files
+M 22:39:28.112215        wireplumber ../wireplumber/src/main.c:372:signal_handler: stopped by signal: Terminated
+M 22:39:28.116085        wireplumber ../wireplumber/src/main.c:364:on_disconnected: disconnected from pipewire
+M 22:39:56.155666             mod.rt ../pipewire/src/modules/module-rt.c:292:translate_error: RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+M 22:39:56.156785             mod.rt ../pipewire/src/modules/module-rt.c:982:do_rtkit_setup: RTKit does not give us MaxRealtimePriority, using 1
+M 22:39:56.156971             mod.rt ../pipewire/src/modules/module-rt.c:292:translate_error: RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+M 22:39:56.156984             mod.rt ../pipewire/src/modules/module-rt.c:987:do_rtkit_setup: RTKit does not give us MinNiceLevel, using 0
+M 22:39:56.157090             mod.rt ../pipewire/src/modules/module-rt.c:292:translate_error: RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+M 22:39:56.157101             mod.rt ../pipewire/src/modules/module-rt.c:992:do_rtkit_setup: RTKit does not give us RTTimeUSecMax, using -1
+W 22:39:56.247203                 pw ../pipewire/spa/plugins/bluez5/upower.c:54:upower_get_percentage_properties_reply: Failed to get percentage from UPower: org.freedesktop.DBus.Error.NameHasNoOwner
+[0:00:10.261447693] [583] [1;31mERROR [1;37mIPAModule [1;34mipa_module.cpp:172 [0mSymbol ipaModuleInfo not found
+[0:00:10.261462487] [583] [1;31mERROR [1;37mIPAModule [1;34mipa_module.cpp:292 [0;32mv4l2-compat.so: [0mIPA module has no valid info
+[0:00:10.261491608] [583] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:284 [0mlibcamera v0.1.0
+W 22:39:56.438267         spa.bluez5 ../pipewire/spa/plugins/bluez5/bluez5-dbus.c:5241:get_managed_objects_reply: GetManagedObjects() failed: org.freedesktop.DBus.Error.NameHasNoOwner
+W 22:39:56.828695 m-portal-permissio ../wireplumber/modules/module-portal-permissionstore.c:63:wp_portal_permissionstore_plugin_lookup: <WpPortalPermissionStorePlugin:0x55ce1c677f10> Failed to call Lookup: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.impl.portal.PermissionStore was not provided by any .service files
+W 22:39:56.829263 m-portal-permissio ../wireplumber/modules/module-portal-permissionstore.c:63:wp_portal_permissionstore_plugin_lookup: <WpPortalPermissionStorePlugin:0x55ce1c677f10> Failed to call Lookup: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.impl.portal.PermissionStore was not provided by any .service files
+M 22:43:21.379691        wireplumber ../wireplumber/src/main.c:372:signal_handler: stopped by signal: Terminated
+M 22:43:21.384068        wireplumber ../wireplumber/src/main.c:364:on_disconnected: disconnected from pipewire
+M 22:43:52.289170             mod.rt ../pipewire/src/modules/module-rt.c:292:translate_error: RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+M 22:43:52.290365             mod.rt ../pipewire/src/modules/module-rt.c:982:do_rtkit_setup: RTKit does not give us MaxRealtimePriority, using 1
+M 22:43:52.290609             mod.rt ../pipewire/src/modules/module-rt.c:292:translate_error: RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+M 22:43:52.290622             mod.rt ../pipewire/src/modules/module-rt.c:987:do_rtkit_setup: RTKit does not give us MinNiceLevel, using 0
+M 22:43:52.290817             mod.rt ../pipewire/src/modules/module-rt.c:292:translate_error: RTKit error: org.freedesktop.DBus.Error.ServiceUnknown
+M 22:43:52.290830             mod.rt ../pipewire/src/modules/module-rt.c:992:do_rtkit_setup: RTKit does not give us RTTimeUSecMax, using -1
+W 22:43:52.404410                 pw ../pipewire/spa/plugins/bluez5/upower.c:54:upower_get_percentage_properties_reply: Failed to get percentage from UPower: org.freedesktop.DBus.Error.NameHasNoOwner
+[0:00:16.414505387] [578] [1;31mERROR [1;37mIPAModule [1;34mipa_module.cpp:172 [0mSymbol ipaModuleInfo not found
+[0:00:16.414531156] [578] [1;31mERROR [1;37mIPAModule [1;34mipa_module.cpp:292 [0;32mv4l2-compat.so: [0mIPA module has no valid info
+[0:00:16.414587078] [578] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:284 [0mlibcamera v0.1.0
+W 22:43:52.982105         spa.bluez5 ../pipewire/spa/plugins/bluez5/bluez5-dbus.c:5241:get_managed_objects_reply: GetManagedObjects() failed: org.freedesktop.DBus.Error.NameHasNoOwner
+W 22:43:53.036656 m-portal-permissio ../wireplumber/modules/module-portal-permissionstore.c:63:wp_portal_permissionstore_plugin_lookup: <WpPortalPermissionStorePlugin:0x5555e52a3260> Failed to call Lookup: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.impl.portal.PermissionStore was not provided by any .service files
+W 22:43:53.037388 m-portal-permissio ../wireplumber/modules/module-portal-permissionstore.c:63:wp_portal_permissionstore_plugin_lookup: <WpPortalPermissionStorePlugin:0x5555e52a3260> Failed to call Lookup: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.impl.portal.PermissionStore was not provided by any .service files
+W 01:09:39.149084 m-portal-permissio ../wireplumber/modules/module-portal-permissionstore.c:63:wp_portal_permissionstore_plugin_lookup: <WpPortalPermissionStorePlugin:0x5555e52a3260> Failed to call Lookup: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.impl.portal.PermissionStore was not provided by any .service files
+W 01:58:15.832457 m-portal-permissio ../wireplumber/modules/module-portal-permissionstore.c:63:wp_portal_permissionstore_plugin_lookup: <WpPortalPermissionStorePlugin:0x5555e52a3260> Failed to call Lookup: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.impl.portal.PermissionStore was not provided by any .service files
+W 01:59:42.981627 m-portal-permissio ../wireplumber/modules/module-portal-permissionstore.c:63:wp_portal_permissionstore_plugin_lookup: <WpPortalPermissionStorePlugin:0x5555e52a3260> Failed to call Lookup: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.impl.portal.PermissionStore was not provided by any .service files
+W 02:01:05.932970 m-portal-permissio ../wireplumber/modules/module-portal-permissionstore.c:63:wp_portal_permissionstore_plugin_lookup: <WpPortalPermissionStorePlugin:0x5555e52a3260> Failed to call Lookup: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.impl.portal.PermissionStore was not provided by any .service files
+W 02:03:36.236489 m-portal-permissio ../wireplumber/modules/module-portal-permissionstore.c:63:wp_portal_permissionstore_plugin_lookup: <WpPortalPermissionStorePlugin:0x5555e52a3260> Failed to call Lookup: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.impl.portal.PermissionStore was not provided by any .service files
