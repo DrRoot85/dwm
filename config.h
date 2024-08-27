@@ -99,20 +99,20 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *roficmd[] = { "rofi -show run", NULL};
 static const char *clipcmd[] = { "clipmenu", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
 static const char *browserd[]  = { "qutebrowser", NULL };
-static const char *browserdd[]  = { "firefox-esr", NULL };
-static const char *coded[]  = { "code", NULL };
+static const char *browserdd[]  = { "firefox-esr", "--new-tab", NULL };
+static const char *coded[]  = { "zeditor", NULL };
 static const char *termcmd[]  = { "kitty", NULL };
-static const char *filed[]  = { "thunar", NULL };
+static const char *filed_cmd[]  = { "wezterm", "start", "yazi" , NULL };
 // static const char *tfiled[]  = { "sakura -e  ranger", NULL };
 // static const char *kbd_cmd  = "switch_layout";
-static const char *downbri[]  = { "/home/DrRoot/.local/bin/Brightness", " --dec", NULL };
-static const char *upbri[]  = { "/home/DrRoot/.local/bin/Brightness", " --inc", NULL };
+static const char *downbri[]  = { "/home/DrRoot/.local/bin/backlight", " --dec", NULL };
+static const char *upbri[]  = { "/home/DrRoot/.local/bin/backlight", " --inc", NULL };
 
 //static const char *micmute[]  = {"pactl set-source-mute @DEFAULT_SOURCE@ toggle", NULL};
-static const char *micmute[]  = { "/home/DrRoot/.local/bin/Volume", "--toggle-mic", NULL };
-static const char *downvol[]  = { "/home/DrRoot/.local/bin/Volume", "--dec", NULL };
-static const char *upvol[]  = { "/home/DrRoot/.local/bin/Volume", "--inc", NULL };
-static const char *mute[]  = { "/home/DrRoot/.local/bin/Volume", "--toggle", NULL };
+static const char *micmute[]  = { "/home/DrRoot/.local/bin/volume", "--toggle-mic", NULL };
+static const char *downvol[]  = { "/home/DrRoot/.local/bin/volume", "--dec", NULL };
+static const char *upvol[]  = { "/home/DrRoot/.local/bin/volume", "--inc", NULL };
+static const char *mute[]  = { "/home/DrRoot/.local/bin/volume", "--toggle", NULL };
 
 static const char *layoutmenu_cmd = "/home/DrRoot/.local/bin/layoutmenu.sh";
 static const char *setabg[]  = { "/home/DrRoot/.local/bin/setbg", NULL };
@@ -160,14 +160,14 @@ ResourcePref resources[] = {
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,             XK_p,      spawn,         SHCMD("rofi -show drun") },
+	// { MODKEY|ShiftMask,             XK_p,      spawn,         SHCMD("rofi -show drun") },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{MODKEY, 	                  XK_c,	 spawn, 	   {.v = clipcmd} },
 	{MODKEY|ShiftMask,              XK_b,	 spawn, 	   {.v = browserd} },
 	{MODKEY|ControlMask,            XK_b,	 spawn, 	   {.v = browserdd} },
 	{MODKEY|ShiftMask,              XK_c,	 spawn, 	   {.v = coded} },
-	{MODKEY|ShiftMask,              XK_t,	 spawn, 	   {.v = filed} },
-	{MODKEY,		           XK_e,	 spawn, 	   SHCMD("kitty -e  yazi") },
+	{MODKEY|ShiftMask,              XK_t,	 spawn, 	   {.v = filed_cmd} },
+	{MODKEY,		           XK_e,	 spawn, 	   SHCMD("kitty --detach  yazi") },
 	/*brightness control keys */
  	// { 0, XF86XK_MonBrightnessDown, spawn, {.v = downbri}},
  	// { 0, XF86XK_MonBrightnessUp,   spawn, {.v = upbri}},
@@ -216,6 +216,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY|ControlMask,	    XK_comma,  cyclelayout,    {.i = -1 } },
 	{ MODKEY|ControlMask,           XK_period, cyclelayout,    {.i = +1 } },
+	{ MODKEY,                       XK_n,      focussame,      {.i = +1 } },
+   	{ MODKEY|ShiftMask,             XK_n,      focussame,      {.i = -1 } },
 	{ MODKEY|ControlMask,     	    XK_i,           view_adjacent,  { .i = +1 } },
 	{ MODKEY|ControlMask,      	    XK_u,           view_adjacent,  { .i = -1 } },
 	// { MODKEY,			    XK_g,          shiftview,              { .i = -1 } },

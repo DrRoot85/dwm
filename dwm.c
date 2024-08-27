@@ -331,6 +331,8 @@ static int xerrordummy(Display *dpy, XErrorEvent *ee);
 static int xerrorstart(Display *dpy, XErrorEvent *ee);
 static void xrdb(const Arg *arg);
 static void zoom(const Arg *arg);
+static void focussame(const Arg *arg);
+static Window lastfocusedwin = None;
 static void load_xresources(void);
 static void resource_load(XrmDatabase db, char *name, enum resource_type rtype, void *dst);
 
@@ -1086,6 +1088,60 @@ expose(XEvent *e)
 			updatesystray();
 	}
 }
+
+void
+focussame(const Arg *arg) {
+    Client *c;
+    XClassHint ch = { NULL, NULL };
+    char *class_name = NULL;
+    int direction = arg->i;
+
+    if (!selmon->sel)
+        return;
+
+    if (!XGetClassHint(dpy, selmon->sel->win, &ch))
+        return;
+    class_name = ch.res_class;
+
+    Client *clients[32];
+    int num_clients = 0;
+    for (c = selmon->clients; c && num_clients < 32; c = c->next) {
+        if (c->tags & selmon->tagset[selmon->seltags] && XGetClassHint(dpy, c->win, &ch)) {
+            if (strcmp(class_name, ch.res_class) == 0)
+                clients[num_clients++] = c;
+            XFree(ch.res_class);
+            XFree(ch.res_name);
+        }
+    }
+
+    Client *target_client = NULL;
+    if (direction == +1) {
+        for (int i = 0; i < num_clients; ++i) {
+            if (clients[i]->win == lastfocusedwin) {
+                target_client = clients[(i + 1) % num_clients];
+                break;
+            }
+        }
+        if (!target_client)
+            target_client = clients[0];
+    } else if (direction == -1) {
+        for (int i = 0; i < num_clients; ++i) {
+            if (clients[i]->win == lastfocusedwin) {
+                target_client = clients[(i - 1 + num_clients) % num_clients];
+                break;
+            }
+        }
+        if (!target_client)
+            target_client = clients[num_clients - 1];
+    }
+
+    if (target_client) {
+        focus(target_client);
+        restack(selmon);
+        lastfocusedwin = target_client->win;
+    }
+}
+
 
 void
 focus(Client *c)
