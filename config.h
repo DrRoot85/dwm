@@ -154,19 +154,19 @@ ResourcePref resources[] = {
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,             XK_p,      spawn,         SHCMD("rofi -show drun") },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	{MODKEY, 	                  XK_c,	 spawn, 	   {.v = clipcmd} },
-	{MODKEY|ShiftMask,              XK_b,	 spawn, 	   {.v = browserd} },
-	{MODKEY|ControlMask,            XK_b,	 spawn, 	   {.v = browserdd} },
-	{MODKEY|ShiftMask,              XK_c,	 spawn, 	   {.v = coded} },
-	{MODKEY|ShiftMask,              XK_t,	 spawn, 	   {.v = filed_cmd} },
-	{MODKEY,		           XK_e,	 spawn, 	   SHCMD("kitty --detach  yazi") },
+	{ MODKEY,                       XK_p,      spawn,      {.v = dmenucmd } },
+	{ MODKEY|ShiftMask,             XK_p,      spawn,      SHCMD("rofi -show drun") },
+	{ MODKEY|ShiftMask,             XK_Return, spawn,      {.v = termcmd } },
+	{MODKEY, 	                      XK_c,	     spawn, 	   {.v = clipcmd} },
+	{MODKEY|ShiftMask,              XK_b,	     spawn, 	   {.v = browserd} },
+	{MODKEY|ControlMask,            XK_b,	     spawn, 	   {.v = browserdd} },
+	{MODKEY|ShiftMask,              XK_c,	     spawn, 	   {.v = coded} },
+	{MODKEY|ShiftMask,              XK_t,	     spawn, 	   {.v = filed_cmd} },
+	{MODKEY,		                    XK_e,	     spawn, 	   SHCMD("kitty --detach  yazi") },
 	/*XF86 Keys control keys */
 	/* Light */
- 	{ 0, XF86XK_MonBrightnessDown, spawn, {.v = downbri}},
- 	{ 0, XF86XK_MonBrightnessUp,   spawn, {.v = upbri}},
+ 	/*{ 0, XF86XK_MonBrightnessDown, spawn, {.v = downbri}},*/
+    /*{ 0, XF86XK_MonBrightnessUp,   spawn, {.v = upbri}},*/
  	/* Audio */
  	{ 0, XF86XK_AudioMicMute,	   spawn, {.v = micmute}},
  	{ 0, XF86XK_AudioLowerVolume, spawn, {.v = downvol}},
