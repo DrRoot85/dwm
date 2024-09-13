@@ -1,0 +1,31 @@
+--- dwm.c
++++ dwm.c
+@@ -443,9 +448,26 @@ buttonpress(XEvent *e)
+ 		if (i < LENGTH(tags)) {
+ 			click = ClkTagBar;
+ 			arg.ui = 1 << i;
+-		} else if (ev->x < x + blw)
++			goto execute_handler;
++		} else if (ev->x < x + blw) {
+ 			click = ClkLtSymbol;
+-		else if (ev->x > selmon->ww - TEXTW(stext))
++			goto execute_handler;
++		}
++
++		x += blw;
++
++		for(i = 0; i < LENGTH(launchers); i++) {
++			x += TEXTW(launchers[i].name);
++			
++			if (ev->x < x) {
++				Arg a;
++				a.v = launchers[i].command;
++				spawn(&a);
++				return;
++			}
++		}	
++
++		if (ev->x > selmon->ww - TEXTW(stext))
+ 			click = ClkStatusText;
+ 		else
+ 			click = ClkWinTitle;

@@ -34,29 +34,6 @@ static char *colors[][3] = {
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
-/* launcher commands (They must be NULL terminated) */
-static const char* surf[]      = { "surf", "duckduckgo.com", NULL };
-static const char* firefox[]      = { "firefox-esr", "duckduckgo.com", NULL };
-static const char* telegram[]      = { "telegram-desktop",  NULL };
-static const char* qutebrowser[]      = { "qutebrowser", "duckduckgo.com", NULL };
-static const char* pavucontrol[]      = { "pavucontrol", NULL };
-static const char* zoomet[]      = { "zoom", NULL };
-
-/* Helper macros for spawning commands */
-#define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
-#define CMD(...)   { .v = (const char*[]){ __VA_ARGS__, NULL } }
-
-static const Launcher launchers[] = {
-       /* command       name to display */
-	// { surf,         "surf" },
-	{ firefox,         	"" },
-	{ telegram, 		""},
-	{ qutebrowser, 	"" },
-	{ pavucontrol, 	"" },
-	{ zoomet,	 	"" },
-	
-};
-
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
