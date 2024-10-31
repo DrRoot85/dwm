@@ -114,6 +114,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 // static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *dmenucmd[] = { "dmenu_run", NULL }; //"-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
 static const char *roficmd[] = { "rofi -show run", NULL};
+static const char *netdcmd[] = { "networkmanager_dmenu", NULL}; 
 static const char *clipcmd[] = { "clipmenu", NULL }; // "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
 static const char *browserd[]  = { "qutebrowser", NULL };
 static const char *browserdd[]  = { "firefox", "--new-tab", NULL };
@@ -180,12 +181,13 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,      {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_p,      spawn,      SHCMD("rofi -show drun") },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,      {.v = termcmd } },
-	{MODKEY, 	                      XK_c,	     spawn, 	   {.v = clipcmd} },
-	{MODKEY|ShiftMask,              XK_b,	     spawn, 	   {.v = browserd} },
-	{MODKEY|ControlMask,            XK_b,	     spawn, 	   {.v = browserdd} },
-	{MODKEY|ShiftMask,              XK_c,	     spawn, 	   {.v = coded} },
-	{MODKEY|ShiftMask,              XK_t,	     spawn, 	   {.v = filed_cmd} },
-	{MODKEY,		                    XK_e,	     spawn, 	   SHCMD("kitty --detach  yazi") },
+	{MODKEY, 	                  XK_c,	 spawn, 	   {.v = clipcmd} },
+	{MODKEY, 	                  XK_n,	 spawn, 	   {.v = netdcmd} },
+	{MODKEY|ShiftMask,              XK_b,	 spawn, 	   {.v = browserd} },
+	{MODKEY|ControlMask,            XK_b,	 spawn, 	   {.v = browserdd} },
+	{MODKEY|ShiftMask,              XK_c,	 spawn, 	   {.v = coded} },
+	{MODKEY|ShiftMask,              XK_t,	 spawn, 	   {.v = filed_cmd} },
+	{MODKEY,		           XK_e,	     spawn, 	   SHCMD("kitty --detach  yazi") },
 	/*XF86 Keys control keys */
 	/* Light */
  	/*{ 0, XF86XK_MonBrightnessDown, spawn, {.v = downbri}},*/
