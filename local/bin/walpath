@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+# Read the path to the image from the wal file
+image_path=$(cat "$HOME/.cache/wal/wal")
+
+# Define the destination path
+destination_path="$HOME/.cache/wal/currentwallpaper.png"
+
+# Get the file extension of the image
+extension="${image_path##*.}"
+
+# Check if the image is already a PNG
+if [ "$extension" != "png" ]; then
+    # Convert the image to PNG format
+    magick "$image_path" "$destination_path"
+else
+    # Copy the image to the destination
+    cp "$image_path" "$destination_path"
+fi
+
+# Check if the operation was successful
+if [ $? -eq 0 ]; then
+    dunstify "Wallpaper processed successfully and saved to $destination_path"
+else
+    dunstify "Failed to process wallpaper"
+fi

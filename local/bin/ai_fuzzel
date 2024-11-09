@@ -1,0 +1,63 @@
+#!/bin/bash
+
+# Define the options and their corresponding actions
+options=(
+    "ChatGPT OpenAI: https://chat.openai.com"
+    "Google AI: https://gemini.google.com"
+    "NotYet"
+)
+
+# Prompt to select a browser or enter its name
+echo "Select a browser or enter its name:"
+echo "1. firefox"
+echo "2. qutebrowser"
+echo "3. brave"
+read -p "Browser choice: " browser_choice
+
+# Check the browser choice
+case $browser_choice in
+    1)
+        browser_command="firefox --new-window"
+        ;;
+    2)
+        browser_command="qutebrowser"
+        ;;
+    3)
+        browser_command="brave --new-window"
+        ;;
+    *)
+        # If a custom browser name or an invalid choice is entered
+        if command -v "$browser_choice" >/dev/null 2>&1; then
+            browser_command="$browser_choice"
+        else
+            echo "Error: Browser '$browser_choice' not found."
+            exit 1
+        fi
+        ;;
+esac
+
+# Prompt to choose an option
+echo ""
+echo "Choose an option:"
+echo "1. ChatGPT OpenAI"
+echo "2. Google AI"
+echo "3. NotYet"
+read -p "Option choice: " option_choice
+
+# Execute the chosen option
+case $option_choice in
+    1)
+        $browser_command "https://chat.openai.com"
+        ;;
+    2)
+        $browser_command "https://gemini.google.com"
+        ;;
+    3)
+        echo "You chose 'NotYet'."
+        ;;
+    *)
+        echo "Invalid option: $option_choice"
+        ;;
+esac
+
+exit 0

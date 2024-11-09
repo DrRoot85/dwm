@@ -1,0 +1,69 @@
+#!/bin/bash
+
+# Use dmenu to select a browser or enter a custom one
+BROWSER=$(echo -e "Brave-beta\nBrave\nFirefox\nQuteBrowser\nSurf\nOther" | dmenu -p "Choose browser:")
+
+# Check if "Other" was selected and prompt for custom browser name
+if [ "$BROWSER" == "Other" ]; then
+  BROWSER=$(dmenu -p "Enter browser name:")
+fi
+
+# Check if a browser was selected or entered
+if [ -z "$BROWSER" ]; then
+  echo "No browser selected."
+  exit 1
+fi
+
+# Use dmenu to select a destination
+DESTINATION=$(echo -e "ChatGPT\nGemini\nGithub\nOthers" | dmenu -p "Choose destination:")
+
+# Check if a destination was selected
+if [ -z "$DESTINATION" ]; then
+  echo "No destination selected."
+  exit 1
+fi
+
+# Open the selected destination in the selected browser
+case $DESTINATION in
+  "ChatGPT")
+    URL="https://chatgpt.com/"
+    ;;
+  "Gemini")
+    URL="https://gemini.google.com/app"
+    ;;
+  "Github")
+    URL="https://github.com/DrRoot85/"
+    ;;
+  "Whatsapp")
+    URL="https://web.whatsapp.com" # Replace with the desired URL for "Others"
+    ;;
+  "Telegram-Web")
+    URL="https://web.telegram.org/" # Replace with the desired URL for "Others"
+    ;;
+  *)
+    echo "Invalid destination selected."
+    exit 1
+    ;;
+esac
+
+# Open the URL in the selected browser
+case $BROWSER in
+  "Brave")
+    brave --app="$URL"
+    ;;
+  "Brave-beta")
+    brave-beta --app="$URL"
+    ;;
+  "Firefox")
+    firefox-esr -new-window "$URL"
+    ;;
+  "QuteBrowser")
+    qutebrowser --target auto "$URL"
+    ;;
+  "Surf")
+    surf "$URL" 2>/dev/null
+    ;;
+  *)
+    $BROWSER "$URL"
+    ;;
+esac
