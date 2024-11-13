@@ -1,5 +1,0 @@
- git remote add upstream  https://git.suckless.org/{slstatus,dwm,dmenu}
-
-
-
-git pull upstream master  // main

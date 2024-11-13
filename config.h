@@ -31,16 +31,21 @@ static char *colors[][3] = {
        [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
 };
 
+static const XPoint stickyicon[]    = { {0,0}, {4,0}, {4,8}, {2,6}, {0,8}, {0,0} }; /* represents the icon as an array of vertices */
+static const XPoint stickyiconbb    = {4,8};	/* defines the bottom right corner of the polygon's bounding box (speeds up scaling) */
+ 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 /* launcher commands (They must be NULL terminated) */
 static const char* surf[]      = { "surf", "duckduckgo.com", NULL };
-static const char* firefox[]      = { "firefox-esr", "duckduckgo.com", NULL };
+static const char* firefox[]      = { "firefox", "duckduckgo.com", NULL };
+static const char* brave[]      = { "brave", "duckduckgo.com", NULL };
 static const char* telegram[]      = { "telegram-desktop",  NULL };
 static const char* qutebrowser[]      = { "qutebrowser", "duckduckgo.com", NULL };
 static const char* pavucontrol[]      = { "pavucontrol", NULL };
 static const char* zoomet[]      = { "zoom", NULL };
+static const char* ai[]      = { "/home/DrRoot/.local/bin/ai", NULL };
 
 /* Helper macros for spawning commands */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
@@ -50,10 +55,13 @@ static const Launcher launchers[] = {
        /* command       name to display */
 	// { surf,         "surf" },
 	{ firefox,         	"" },
+	{ brave,         	"" },
 	{ telegram, 		""},
 	{ qutebrowser, 	"" },
 	{ pavucontrol, 	"" },
 	{ zoomet,	 	"" },
+	{ ai,	 		"" },
+	
 	
 };
 
@@ -249,7 +257,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_F5,     xrdb,           {.v = NULL } },
-	{ MODKEY,					    XK_g,      shiftview,      { .i = -1 } },
+	{ MODKEY,			    XK_g,      shiftview,      { .i = -1 } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
@@ -259,10 +267,10 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-  { MODKEY|ShiftMask,             XK_r,      self_restart,   {0} },
+  	{ MODKEY|ShiftMask,             XK_r,      self_restart,   {0} },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} },
-	{ MODKEY,			            XK_x,      exitdwm,	       {0} }, 
+	{ MODKEY,			    XK_x,      exitdwm,	       {0} }, 
 };
 
 /* button definitions */
