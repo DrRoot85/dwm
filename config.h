@@ -3,6 +3,11 @@
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
+static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
+static const unsigned int systrayonleft = 0;    /* 0: systray in the right corner, >0: systray on left of status text */
+static const unsigned int systrayspacing = 2;   /* systray spacing */
+static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
+static const int showsystray        = 1;        /* 0 means no systray */
 static const unsigned int gappih    = 20;       /* horiz inner gap between windows */
 static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
 static const unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
@@ -25,6 +30,40 @@ static char normfgcolor[]           = "#bbbbbb";
 static char selfgcolor[]            = "#eeeeee";
 static char selbordercolor[]        = "#005577";
 static char selbgcolor[]            = "#005577";
+static char termcol0[] = "#000000"; /* black   */
+static char termcol1[] = "#ff0000"; /* red     */
+static char termcol2[] = "#33ff00"; /* green   */
+static char termcol3[] = "#ff0099"; /* yellow  */
+static char termcol4[] = "#0066ff"; /* blue    */
+static char termcol5[] = "#cc00ff"; /* magenta */
+static char termcol6[] = "#00ffff"; /* cyan    */
+static char termcol7[] = "#d0d0d0"; /* white   */
+static char termcol8[]  = "#808080"; /* black   */
+static char termcol9[]  = "#ff0000"; /* red     */
+static char termcol10[] = "#33ff00"; /* green   */
+static char termcol11[] = "#ff0099"; /* yellow  */
+static char termcol12[] = "#0066ff"; /* blue    */
+static char termcol13[] = "#cc00ff"; /* magenta */
+static char termcol14[] = "#00ffff"; /* cyan    */
+static char termcol15[] = "#ffffff"; /* white   */
+static char *termcolor[] = {
+  termcol0,
+  termcol1,
+  termcol2,
+  termcol3,
+  termcol4,
+  termcol5,
+  termcol6,
+  termcol7,
+  termcol8,
+  termcol9,
+  termcol10,
+  termcol11,
+  termcol12,
+  termcol13,
+  termcol14,
+  termcol15,
+};
 static char *colors[][3] = {
        /*               fg           bg           border   */
        [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
@@ -34,12 +73,27 @@ static char *colors[][3] = {
 static const XPoint stickyicon[]    = { {0,0}, {4,0}, {4,8}, {2,6}, {0,8}, {0,0} }; /* represents the icon as an array of vertices */
 static const XPoint stickyiconbb    = {4,8};	/* defines the bottom right corner of the polygon's bounding box (speeds up scaling) */
  
+typedef struct {
+	const char *name;
+	const void *cmd;
+} Sp;
+const char *spcmd1[] = {"st", "-n", "spterm", "-g", "120x34", NULL };
+const char *spcmd2[] = {"st", "-n", "spfm", "-g", "144x41", "-e", "ranger", NULL };
+const char *spcmd3[] = {"keepassxc", NULL };
+static Sp scratchpads[] = {
+	/* name          cmd  */
+	{"spterm",      spcmd1},
+	{"spranger",    spcmd2},
+	{"keepassxc",   spcmd3},
+};
+
+
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 /* launcher commands (They must be NULL terminated) */
 static const char* surf[]      = { "surf", "duckduckgo.com", NULL };
-static const char* firefox[]      = { "firefox", "duckduckgo.com", NULL };
+static const char* komikku[]      = { "komikku",  NULL };
 static const char* brave[]      = { "brave", "duckduckgo.com", NULL };
 static const char* telegram[]      = { "telegram-desktop",  NULL };
 static const char* qutebrowser[]      = { "qutebrowser", "duckduckgo.com", NULL };
@@ -54,7 +108,7 @@ static const char* ai[]      = { "/home/DrRoot/.local/bin/ai", NULL };
 static const Launcher launchers[] = {
        /* command       name to display */
 	// { surf,         "surf" },
-	{ firefox,         	"" },
+	{ komikku,         	"" },
 	{ brave,         	"" },
 	{ telegram, 		""},
 	{ qutebrowser, 	"" },
@@ -75,6 +129,9 @@ static const Rule rules[] = {
 	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
 	{ "St",      NULL,     NULL,           0,         0,          1,           0,        -1 },
 	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
+	{ NULL,      "spterm", NULL,	    SPTAG(0),	 1,	      -1,	     0,	 -1 },
+	{ NULL,      "spfm",	  NULL,	    SPTAG(1),	 1,	      -1,	     0,	 -1 },
+	{ NULL,      "keepassxc",	NULL,	    SPTAG(2),	 0,	      -1,	     0,	 -1 },
 };
 
 /* layout(s) */
@@ -149,11 +206,11 @@ static const char *autowall[]  = { "/home/DrRoot/.local/bin/autowall", NULL };
  */
 ResourcePref resources[] = {
 		{ "color0",		STRING,	&normbordercolor },
-		{ "color8",		STRING,	&selbordercolor },
-		{ "color0",		STRING,	&normbgcolor },
-		{ "color4",		STRING,	&normfgcolor },
-		{ "color0",		STRING,	&selfgcolor },
-		{ "color4",		STRING,	&selbgcolor },
+		{ "color6",		STRING,	&selbordercolor },
+		{ "color1",		STRING,	&normbgcolor },
+		{ "color0",		STRING,	&normfgcolor },
+		{ "color14",		STRING,	&selfgcolor },
+		{ "color0",		STRING,	&selbgcolor },
 		{ "font",               STRING,  &font },
 		{ "dmenufont",          STRING,  &dmenufont },
 		{ "normbgcolor",        STRING,  &normbgcolor },
@@ -175,6 +232,41 @@ ResourcePref resources[] = {
 		{ "gappov",		INTEGER, &gappov },
 		{ "swallowfloating",	INTEGER, &swallowfloating },
 		{ "smartgaps",		INTEGER, &smartgaps },
+
+		{ "color0",  		STRING,	&termcol0 },
+        	{ "color1",  		STRING,	&termcol1 },
+        	{ "color2",  		STRING,	&termcol2 },
+        	{ "color3",  		STRING,	&termcol3 },
+        	{ "color4",  		STRING,	&termcol4 },
+        	{ "color5",  		STRING,	&termcol5 },
+        	{ "color6",  		STRING,	&termcol6 },
+        	{ "color7",  		STRING,	&termcol7 },
+        	{ "color8",  		STRING,	&termcol8 },
+        	{ "color9",  		STRING,	&termcol9 },
+        	{ "color10", 		STRING,	&termcol10 },
+        	{ "color11", 		STRING,	&termcol11 },
+        	{ "color12", 		STRING,	&termcol12 },
+        	{ "color13", 		STRING,	&termcol13 },
+        	{ "color14", 		STRING,	&termcol14 },
+        	{ "color15", 		STRING,	&termcol15 },
+
+		{ "termcol0",  	STRING,	&termcol0 },
+        	{ "termcol1",  	STRING,	&termcol1 },
+        	{ "termcol2",  	STRING,	&termcol2 },
+        	{ "termcol3",  	STRING,	&termcol3 },
+        	{ "termcol4",  	STRING,	&termcol4 },
+        	{ "termcol5",  	STRING,	&termcol5 },
+        	{ "termcol6",  	STRING,	&termcol6 },
+        	{ "termcol7",  	STRING,	&termcol7 },
+        	{ "termcol8",  	STRING,	&termcol8 },
+        	{ "termcol9",  	STRING,	&termcol9 },
+        	{ "termcol10", 	STRING,	&termcol10 },
+        	{ "termcol11", 	STRING,	&termcol11 },
+        	{ "termcol12", 	STRING,	&termcol12 },
+        	{ "termcol13", 	STRING,	&termcol13 },
+        	{ "termcol14", 	STRING,	&termcol14 },
+        	{ "termcol15", 	STRING,	&termcol15 },
+
 };
 
 
@@ -183,17 +275,18 @@ ResourcePref resources[] = {
 #include "exitdwm.c"
 #include "nextprevtag.c"
 #include "shiftview.c"
+// #include "bulkill.c"
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,      {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_p,      spawn,      SHCMD("rofi -show drun") },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,      {.v = termcmd } },
-	{MODKEY, 	                  XK_c,	 spawn, 	   {.v = clipcmd} },
+	{MODKEY, 	                  XK_v,	 spawn, 	   {.v = clipcmd} },
 	{MODKEY, 	                  XK_n,	 spawn, 	   {.v = netdcmd} },
 	{MODKEY|ShiftMask,              XK_b,	 spawn, 	   {.v = browserd} },
 	{MODKEY|ControlMask,            XK_b,	 spawn, 	   {.v = browserdd} },
-	{MODKEY|ShiftMask,              XK_c,	 spawn, 	   {.v = coded} },
+	{MODKEY,		           XK_c,	 spawn, 	   {.v = coded} },
 	{MODKEY|ShiftMask,              XK_t,	 spawn, 	   {.v = filed_cmd} },
 	{MODKEY,		           XK_e,	     spawn, 	   SHCMD("kitty --detach  yazi") },
 	/*XF86 Keys control keys */
@@ -225,24 +318,26 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_l,      setcfact,       {.f = -0.25} },
 	{ MODKEY|ShiftMask,             XK_o,      setcfact,       {.f =  0.00} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
-	{ MODKEY|Mod4Mask,              XK_u,      incrgaps,       {.i = +1 } },
-	{ MODKEY|Mod4Mask|ShiftMask,    XK_u,      incrgaps,       {.i = -1 } },
-	{ MODKEY|Mod4Mask,              XK_i,      incrigaps,      {.i = +1 } },
-	{ MODKEY|Mod4Mask|ShiftMask,    XK_i,      incrigaps,      {.i = -1 } },
-	{ MODKEY|Mod4Mask,              XK_o,      incrogaps,      {.i = +1 } },
-	{ MODKEY|Mod4Mask|ShiftMask,    XK_o,      incrogaps,      {.i = -1 } },
-	{ MODKEY|Mod4Mask,              XK_6,      incrihgaps,     {.i = +1 } },
-	{ MODKEY|Mod4Mask|ShiftMask,    XK_6,      incrihgaps,     {.i = -1 } },
-	{ MODKEY|Mod4Mask,              XK_7,      incrivgaps,     {.i = +1 } },
-	{ MODKEY|Mod4Mask|ShiftMask,    XK_7,      incrivgaps,     {.i = -1 } },
-	{ MODKEY|Mod4Mask,              XK_8,      incrohgaps,     {.i = +1 } },
-	{ MODKEY|Mod4Mask|ShiftMask,    XK_8,      incrohgaps,     {.i = -1 } },
-	{ MODKEY|Mod4Mask,              XK_9,      incrovgaps,     {.i = +1 } },
-	{ MODKEY|Mod4Mask|ShiftMask,    XK_9,      incrovgaps,     {.i = -1 } },
-	{ MODKEY|Mod4Mask,              XK_0,      togglegaps,     {0} },
-	{ MODKEY|Mod4Mask|ShiftMask,    XK_0,      defaultgaps,    {0} },
+	{ MODKEY|Mod1Mask,              XK_u,      incrgaps,       {.i = +1 } },
+	{ MODKEY|Mod1Mask|ShiftMask,    XK_u,      incrgaps,       {.i = -1 } },
+	{ MODKEY|Mod1Mask,              XK_i,      incrigaps,      {.i = +1 } },
+	{ MODKEY|Mod1Mask|ShiftMask,    XK_i,      incrigaps,      {.i = -1 } },
+	{ MODKEY|Mod1Mask,              XK_o,      incrogaps,      {.i = +1 } },
+	{ MODKEY|Mod1Mask|ShiftMask,    XK_o,      incrogaps,      {.i = -1 } },
+	{ MODKEY|Mod1Mask,              XK_6,      incrihgaps,     {.i = +1 } },
+	{ MODKEY|Mod1Mask|ShiftMask,    XK_6,      incrihgaps,     {.i = -1 } },
+	{ MODKEY|Mod1Mask,              XK_7,      incrivgaps,     {.i = +1 } },
+	{ MODKEY|Mod1Mask|ShiftMask,    XK_7,      incrivgaps,     {.i = -1 } },
+	{ MODKEY|Mod1Mask,              XK_8,      incrohgaps,     {.i = +1 } },
+	{ MODKEY|Mod1Mask|ShiftMask,    XK_8,      incrohgaps,     {.i = -1 } },
+	{ MODKEY|Mod1Mask,              XK_9,      incrovgaps,     {.i = +1 } },
+	{ MODKEY|Mod1Mask|ShiftMask,    XK_9,      incrovgaps,     {.i = -1 } },
+	{ MODKEY|Mod1Mask,              XK_0,      togglegaps,     {0} },
+	{ MODKEY|Mod1Mask|ShiftMask,    XK_0,      defaultgaps,    {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY,			            XK_q,      killclient,     {0} },
+	{ MODKEY,			    XK_q,      killclient,     {0} },
+	{ MODKEY|ControlMask,           XK_c,      killclient,     {.ui = 1} },  // kill unselect
+	{ MODKEY|ShiftMask|ControlMask,  XK_c,      killclient,     {.ui = 2} },  // killall
 	{ MODKEY|ControlMask,     	    XK_i,           view_adjacent,  { .i = +1 } },
 	{ MODKEY|ControlMask,      	    XK_u,           view_adjacent,  { .i = -1 } },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
@@ -256,6 +351,9 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	{ MODKEY,       		    XK_y,  	   togglescratch,  {.ui = 0 } },
+	{ MODKEY,            	    XK_u,	   togglescratch,  {.ui = 1 } },
+	{ MODKEY|ShiftMask,             XK_x,	   togglescratch,  {.ui = 2 } },
 	{ MODKEY,                       XK_F5,     xrdb,           {.v = NULL } },
 	{ MODKEY,			    XK_g,      shiftview,      { .i = -1 } },
 	TAGKEYS(                        XK_1,                      0)
@@ -270,7 +368,7 @@ static const Key keys[] = {
   	{ MODKEY|ShiftMask,             XK_r,      self_restart,   {0} },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} },
-	{ MODKEY,			    XK_x,      exitdwm,	       {0} }, 
+	{ MODKEY,			    XK_x,      exitdwm,	   {0} }, 
 };
 
 /* button definitions */
@@ -283,7 +381,7 @@ static const Button buttons[] = {
 	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
-	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
+	{ ClkClientWin,         MODKEY,         Button1,        resizemouse,    {0} },
 	{ ClkTagBar,            0,              Button1,        view,           {0} },
 	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
