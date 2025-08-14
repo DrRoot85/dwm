@@ -20,8 +20,8 @@ static const int vertpad            = 10;       /* vertical padding of bar */
 static const int sidepad            = 10;       /* horizontal padding of bar */
 #define ICONSIZE 16   /* icon size */
 #define ICONSPACING 5 /* space between icon and title */
-static const char *fonts[]          = { "monospace:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
+static const char *fonts[]          =  { "GoMono Nerd Font:size=10", "Hack:size=9:antialias=true:autohint=true", "NotoColorEmoji:pixelsize=9:antialias=true:autohint=true" , "terminus:style=Bold:size=9" ,"monospace:size=9" };
+static const char dmenufont[]       = "GoMono Nerd Font:size=10";
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
@@ -33,6 +33,13 @@ static char *colors[][3] = {
        [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
        [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
 };
+
+static const char *const autostart[] = {
+	// "st", NULL,
+	// "clipmenud", NULL,
+	NULL /* terminate */
+};
+
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
@@ -95,13 +102,51 @@ static const char *termcmd[]  = { "kitty", NULL };
 static const char *layoutmenu_cmd = "/home/DrRoot/.local/bin/layoutmenu";
 static const char *clipcmd[] 	 = { "clipmenu", "-m", dmenumon, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL }; 
 
+/* Custom */
+// static const char *kbd_cmd  = "/home/DrRoot/.local/bin/lang";
+// static const char *downbri[]  = { "/home/DrRoot/.local/bin/backlight", " --dec", NULL };
+// static const char *upbri[]  = { "/home/DrRoot/.local/bin/backlight", " --inc", NULL };
+
+//static const char *micmute[]  = {"pactl set-source-mute @DEFAULT_SOURCE@ toggle", NULL};
+static const char *micmute[]  = { "/home/DrRoot/.local/bin/volume", "--toggle-mic", NULL };
+static const char *downvol[]  = { "/home/DrRoot/.local/bin/volume", "--dec", NULL };
+static const char *upvol[]  = { "/home/DrRoot/.local/bin/volume", "--inc", NULL };
+static const char *mute[]  = { "/home/DrRoot/.local/bin/volume", "--toggle", NULL };
+
+// static const char *layoutmenu_cmd = "/home/DrRoot/.local/bin/layoutmenu.sh";
+static const char *setabg[]  = { "/home/DrRoot/.local/bin/setbg", NULL };
+static const char *autowall[]  = { "/home/DrRoot/.local/bin/autowall", NULL };
+static const char *setlang[]  = { "/home/DrRoot/.local/bin/lang", NULL };
+static const char *launchvmf[]  = { "/home/DrRoot/.local/bin/launchvmfree", NULL };
+
 #include "selfrestart.c"
+#include <X11/XF86keysym.h>
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY, 	                  XK_c,	 spawn, 	   {.v = clipcmd} },
+	{ MODKEY, 	                  XK_v,	 spawn, 	   SHCMD("~/.local/bin/greenclip-dmenu") },
+	{ MODKEY, 			    XK_F11,    spawn, 	   {.v = setlang}},
+	/*XF86 Keys control keys */
+	/* Light */
+ 	// { 0, XF86XK_MonBrightnessDown, spawn, {.v = downbri}},
+	// { 0, XF86XK_MonBrightnessUp,   spawn, {.v = upbri}},
+ 	/* Audio */
+ 	{ 0, XF86XK_AudioMicMute,	   spawn, {.v = micmute}},
+ 	{ 0, XF86XK_AudioLowerVolume, spawn, {.v = downvol}},
+ 	{ 0, XF86XK_AudioRaiseVolume, spawn, {.v = upvol}},
+ 	{ 0, XF86XK_AudioMute, spawn, {.v = mute}},
+ 	/* Other */
+  	// { 0, XF86XK_Keyboard,          spawn, {.v = setlang}},
+	// { 0, XF86XK_LaunchA,           spawn, {.v = }},
+  	// { 0, XF86XK_Tools,             spawn, {.v = launchvmf}},
+  	// { 0, XF86XK_Favorites,            spawn, {.v = setabg}},
+  	// { 0, XF86XK_Display,           spawn, {.v = }},
+  	/* Custom Key */
+	// {Mod1Mask,              	ShiftMask,	 spawn, 	   {.v = kbd_cmd} },
+	/* */
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
